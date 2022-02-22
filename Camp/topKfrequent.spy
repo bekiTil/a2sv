@@ -1,0 +1,23 @@
+import heapq as hq
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        new={}
+        frequent=[]
+        for i in nums:
+            if i in new:
+                new[i]+=1
+            else:
+                new[i]=1
+        print(new)
+        news=[]
+        for i,y in new.items():
+            news.append((y,i))
+        print(news)
+        hq.heapify(news)
+        while len(news)>k:
+            hq.heappop(news)
+        for i in news:
+            frequent.append(i[1])
+        return frequent
+        
+        
