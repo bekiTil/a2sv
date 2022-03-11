@@ -13,6 +13,7 @@ for i in range(test):
     if length%2==0:
         if red>sum(num[:-1]):
             print("Yes")
+            
         else:
             print("No")
     else:
