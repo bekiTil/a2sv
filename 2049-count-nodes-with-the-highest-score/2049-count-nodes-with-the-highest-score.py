@@ -40,5 +40,4 @@ class Solution:
                 return sum(memo)+1
         visited.add(0)
         dfs(0)
-        print(temp)
         return temp.count(max(temp))
