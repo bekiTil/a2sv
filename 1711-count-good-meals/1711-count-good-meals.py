@@ -2,7 +2,7 @@ class Solution:
     def countPairs(self, deliciousness: List[int]) -> int:
         if len(deliciousness) == 1:
             return 0
-            
+        
         deliciousness.sort()
     
     
@@ -30,6 +30,14 @@ class Solution:
                         ans=(ans+count[check-i])% 1000000007
                 check*=2
         return ans
+    
+    """
+       Time Complexity 
+       O(20n)
+       Space Complexity
+       O(n)
+
+        """
                         
                     
                 
