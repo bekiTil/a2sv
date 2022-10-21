@@ -17,7 +17,6 @@ class Solution:
                 outDegree[val]-=1
                 if outDegree[val]==0:
                     level.append(val)
-        # print(ans)
         ans.sort()
         return ans
             
