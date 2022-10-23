@@ -33,6 +33,7 @@ class Solution:
         minimum=float("inf")
         for i in range(len(ans)):
             n=distnict[i]
+            
             left,right=prefix[i],prefix[-1]-prefix[i+1]
             mleft,mright=sprefix[i],sprefix[-1]-sprefix[i+1]
             
