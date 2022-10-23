@@ -46,7 +46,6 @@ class TreeAncestor:
             dps = int(math.log2(k))
             k -= pow(2, dps)
             node=self.binary[(node,pow(2,dps))]
-            
         return node
 
 # Your TreeAncestor object will be instantiated and called as such:
