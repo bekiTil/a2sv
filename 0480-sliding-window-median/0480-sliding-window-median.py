@@ -1,10 +1,10 @@
 class Solution:
     def medianSlidingWindow(self, nums: List[int], k: int) -> List[float]:
-        value=nums[:k-1]
+        value=deque(nums[:k-1])
         ans=[]
         for i in range(k-1,len(nums)):
             if i>k-1:
-                value.pop(0)
+                value.popleft()
                 
             value.append(nums[i])
             
