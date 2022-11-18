@@ -1,6 +1,7 @@
 class Solution:
     def sumOfDistancesInTree(self, n: int, edges: List[List[int]]) -> List[int]:
         dp=[[0,0] for _ in range(n)]
+        ans=[0 for _ in range(n)]
         
         tree=defaultdict(list)
         for i,j in edges:
@@ -8,38 +9,32 @@ class Solution:
             tree[j].append(i)
         
         visited=set()
-        def dfs(node):
+        def dfs(node,parent):
             total=0
             temp=0
             for val in tree[node]:  
-                if val not in visited:
+                if val != parent:
                     visited.add(val)
-                    value=dfs(val)
+                    value=dfs(val,node)
                     total+=(value[0]+value[1])
                     temp+=value[1]
             dp[node][0],dp[node][1]=total,temp+1
           
             return total,temp+1
-        visited.add(0)
-        dfs(0)
+       
+        dfs(0,-1)
         
      
         
-        def dfs2(node):
+        def dfs2(node,parent):
             for val in tree[node]:
-                if val not in visited:
+                if val!=parent:
                     dp[val][0]+=(dp[node][0]-(dp[val][0]+dp[val][1])+(dp[node][1]-dp[val][1]))
                     dp[val][1]=dp[node][1]
-                    visited.add(val)
-                    dfs2(val)
-        visited=set()
-        visited.add(0)
-        dfs2(0)
-      
-        ans=[]
-        for i,j in dp:
-            ans.append(i)
+                    ans[val]=dp[val][0]
+                    dfs2(val,node)
+        dfs2(0,-1)
+        ans[0]=dp[0][0]
         return ans
-                    
                     
                 
