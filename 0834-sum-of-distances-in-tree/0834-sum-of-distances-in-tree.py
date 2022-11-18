@@ -8,18 +8,16 @@ class Solution:
             tree[i].append(j)
             tree[j].append(i)
         
-        visited=set()
+     
         def dfs(node,parent):
             total=0
             temp=0
             for val in tree[node]:  
                 if val != parent:
-                    visited.add(val)
                     value=dfs(val,node)
                     total+=(value[0]+value[1])
                     temp+=value[1]
             dp[node][0],dp[node][1]=total,temp+1
-          
             return total,temp+1
        
         dfs(0,-1)
