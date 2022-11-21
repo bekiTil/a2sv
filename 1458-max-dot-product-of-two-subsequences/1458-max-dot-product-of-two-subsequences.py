@@ -7,10 +7,8 @@ class Solution:
                 taken=dp[i][j]+nums1[j]*nums2[i]
                 
                 dp[i+1][j+1]=max(taken,dp[i][j+1],dp[i+1][j])
-        # print(dp)
-        for i in dp:
-            print(*i)
+       
         if dp[-1][-1]==0:
             return max(max(nums1)*min(nums2),max(nums2)*min(nums1))
-        print()
+     
         return dp[-1][-1]
