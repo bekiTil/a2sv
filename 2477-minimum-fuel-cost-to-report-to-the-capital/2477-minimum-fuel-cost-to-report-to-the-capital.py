@@ -14,16 +14,19 @@ class Solution:
                 if val not in visited:
                     visited.add(val)
                     new_person,new_num_of_cars,new_liters=dfs(val,seats)
+                    
                     liters+=(new_num_of_cars+new_liters)
+                    
                     num_of_cars+=new_num_of_cars
                     
-                    if current_person+new_person>seats:
+                    current_person+=new_person
+                    
+                    if current_person>seats:
+                        current_person-= seats
                         
-                        current_person=current_person+new_person - seats
                     else:
-                        current_person+=(new_person)
                         num_of_cars-=1
-                   
+                        
             return current_person,num_of_cars,liters
         
         return dfs(0,seats)[-1]
