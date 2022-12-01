@@ -33,7 +33,7 @@ class Solution:
             for val in graph[node]:
                 cache[val]=max(cache[val],cache[node]+1)
                 maximum=max(cache[val]+1,maximum)
-        print(cache)
+        # print(cache)
         if maximum==0:
             return 1
         return maximum
