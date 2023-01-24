@@ -12,10 +12,8 @@ class Solution:
         nums.sort()
         total=0
         mod=10**9 + 7
-        print(arr)
-        print(nums)
+        
         for i in range(len(nums)):
             total+=(nums[i]*arr[i])
-            
-           
+            total%=mod
         return total % mod
