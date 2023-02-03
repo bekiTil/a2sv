@@ -18,8 +18,8 @@ class Solution:
             temp=defaultdict(list)
             for val,col in level:
                 temp[col].append(val.val)
-                self.min=min(self.min,col)
-                self.max=max(self.max,col)
+                self.min,self.max=min(self.min,col),max(self.max,col)
+            
             for val in temp:
                 temp[val].sort()
                 memo[val].extend(temp[val])
@@ -34,7 +34,6 @@ class Solution:
        
         ans=[]
         for i in range(self.min,self.max+1):
-            
             ans.append(memo[i])
         return ans
         
