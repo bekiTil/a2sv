@@ -1,14 +1,17 @@
 class Solution:
     def __init__(self, w: List[int]):
-        s = sum(w)
-        self.weight = [w[0]/s]
+        total= sum(w)
+        self.weight = [w[0]/total]
         for i in range(1, len(w)):            
-            self.weight.append(self.weight[-1]+w[i]/s)
+            self.weight.append(self.weight[-1]+w[i]/total)
 
     def pickIndex(self) -> int:
-        l, r, seed = 0, len(self.weight)-1, random.random()
-        while l < r:
-            m = (l+r)//2
-            if self.weight[m] <= seed: l = m+1
-            else: r = m
-        return l
+        left, right= 0, len(self.weight)-1
+        number = random.random()
+        while left < right:
+            mid = (left+right)//2
+            if self.weight[mid] <= number:
+                left = mid+1
+            else: 
+                right = mid
+        return left
