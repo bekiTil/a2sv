@@ -10,10 +10,9 @@ class Solution:
         for index,k in enumerate(s2):
           
             if k not in val:
-                tempcount=defaultdict(int)
-                length=0
-                i=index+1
+                tempcount,length,i=defaultdict(int),0,index+1
                 continue
+            
             tempcount[k]+=1
             
                 
