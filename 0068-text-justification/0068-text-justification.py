@@ -15,14 +15,6 @@ class Solution:
                 position, j =position +1,j+1
             index=j
                 
-            # oneLine, j, currWidth, positionNum, spaceNum = [words[i]], i + 1, len(words[i]), 0, maxWidth - len(words[i])
-            # while j < N and currWidth + 1 + len(words[j]) <= maxWidth:
-            #     oneLine.append(words[j])
-            #     currWidth += 1 + len(words[j])
-            #     spaceNum -= len(words[j])
-            #     positionNum, j = positionNum + 1, j + 1
-            # i = j
-            # decide the layout of one line
             if index  < length and position:
                 spaces=[" " * (space//position + (k< space % position)) for k in range(position) ]+ ['']
             else:
