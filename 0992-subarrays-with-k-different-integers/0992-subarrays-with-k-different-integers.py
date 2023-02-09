@@ -2,7 +2,7 @@ class Solution:
     def subarraysWithKDistinct(self, num: List[int], k: int) -> int:
         def atMost(A, K):
             n = len(A)  
-            count = collections.defaultdict(int)
+            count = defaultdict(int)
             left = 0
             res = 0
 
