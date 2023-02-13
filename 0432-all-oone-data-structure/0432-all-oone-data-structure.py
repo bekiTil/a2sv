@@ -2,50 +2,43 @@ class AllOne:
 
     def __init__(self):
         
-        self.freq = defaultdict(int)
-        self.minheap = []
-        self.maxheap = []
+        self.count=defaultdict(int)
+        self.min=[]
+        self.max=[]
         
 
     def inc(self, key: str) -> None:
   
-        self.freq[key] += 1
-        heappush(self.minheap, [self.freq[key], key])
-        heappush(self.maxheap, [-self.freq[key], key])
+        self.count[key]+=1
+        heappush(self.min, [self.count[key], key])
+        heappush(self.max, [-self.count[key], key])
 
     def dec(self, key: str) -> None:
-       
-        self.freq[key] -= 1
-        heappush(self.minheap, [self.freq[key], key])
-        heappush(self.maxheap, [-self.freq[key], key])
+        self.count[key]-=1
+        heappush(self.min, [self.count[key], key])
+        heappush(self.max, [-self.count[key], key])
 
     def getMaxKey(self) -> str:
-       
-        
-        while self.maxheap:
-            topFreq, topVal = self.maxheap[0]
-            if topFreq == 0:
-                heappop(self.maxheap)
+        while self.max:
+            most, value = self.max[0]
+            if most == 0:
+                heappop(self.max)
                 continue
-                
-            if self.freq[topVal] == -topFreq:
-                return topVal
-            heappop(self.maxheap)
-            
+            if self.count[value]==-most:
+                return value
+            heappop(self.max)
         return ''
 
     def getMinKey(self) -> str:
-       
-        while self.minheap:
-            topFreq, topVal = self.minheap[0]
-            if topFreq == 0:
-                heappop(self.minheap)
+        while self.min:
+            most, value=self.min[0]
+            if most==0:
+                heappop(self.min)
                 continue
                 
-            if self.freq[topVal] == topFreq:
-                return topVal
-            heappop(self.minheap)
-            
+            if self.count[value]==most:
+                return value
+            heappop(self.min)
         return ''
         
 
