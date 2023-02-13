@@ -10,3 +10,4 @@ class Solution:
             memo[i%k]+=1
         return ans
         
+        
