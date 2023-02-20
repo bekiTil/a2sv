@@ -10,6 +10,7 @@ class Solution:
                 while index < len(val):
                     if val[index] == val[first]:
                         count +=1
+                        
                     else:
                         break
                     index +=1
@@ -20,10 +21,7 @@ class Solution:
                     else:
                         break
                     value +=1 
-              
-                
                 first = index
-                
                 if not ( (temp == count) or (temp > count and temp>=3)):
                     find=False
                     break
