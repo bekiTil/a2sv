@@ -2,14 +2,10 @@ class Solution:
     def expressiveWords(self, s: str, words: List[str]) -> int:
         ans = 0
         for val in words:
+            first , value , index , find = 0 , 0 , 0 , True
             
-            first = 0
-            value = 0
-            index  = 0
-            count = 0 
-            find = True
             while index < len(val) and value < len(s):
-                # print(index,value)
+               
                 count = 0
                 while index < len(val):
                     if val[index] == val[first]:
@@ -31,10 +27,7 @@ class Solution:
                 if not ( (temp == count) or (temp > count and temp>=3)):
                     find=False
                     break
-               
             
-            if not ( (temp == count) or (temp > count and temp>=3)):
-                    find=False
             if len(set(val))!= len(set(s)):
                 find=False
             
