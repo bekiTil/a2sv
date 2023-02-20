@@ -28,10 +28,7 @@ class Solution:
                     find=False
                     break
             
-            if len(set(val))!= len(set(s)):
-                find=False
-            
-            if value < len(s):
+            if value < len(s) or index < len(val):
                 find = False
             if find:
                 ans +=1
