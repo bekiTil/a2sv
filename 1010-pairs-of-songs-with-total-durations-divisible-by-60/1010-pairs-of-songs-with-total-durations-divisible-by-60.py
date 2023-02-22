@@ -1,22 +1,21 @@
 class Solution:
     def numPairsDivisibleBy60(self, time: List[int]) -> int:
-        count=defaultdict(int)
-        for i in time:
-            count[i%60]+=1
-        temp=[]
-        for i in count:
-            temp.append(i)
-        visited=set()
-        ans=0
-        print(temp)
-        for val in temp:
-            if val==0:
-                ans+=(count[val]*(count[val]-1))//2
-            elif 60-val==val :
-                visited.add(val)
-                ans+=(count[val]*(count[val]-1))//2
-            elif val not in visited :
-                visited.add(60-val)
-                ans+=count[(60-val)]*count[val]
-        return ans
-                
+        
+        count = defaultdict(int)
+        
+        
+            
+        ans = 0 
+        
+        for val in time:
+            
+            value = (60 - val%60)
+           
+            
+            if value == 60:
+                value =0
+            ans += count[value]
+           
+            count[val%60]+=1
+        return ans 
+        
