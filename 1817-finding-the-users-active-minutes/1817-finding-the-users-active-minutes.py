@@ -4,7 +4,7 @@ class Solution:
    
         memo = {}
 
-        #O(lenOfLogs)
+     
         for log in logs:
             if log[0] not in memo:
                 memo[log[0]] = {log[1]}
