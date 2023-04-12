@@ -7,8 +7,6 @@ class Solution:
                 return 
             for i in range(k):
                 path[i]+=arr[0]
-                
-                
                 backtrack(arr[1:], path,k,max(maxi,path[i]))
                 path[i]-=arr[0]
         value =[0 for _ in range(k)]
