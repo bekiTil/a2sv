@@ -9,7 +9,7 @@ class Solution:
         for i in range(len(nums)-1,-1,-1):
             suffix.append(suffix[-1] | nums[i])
         prefix.append(0)
-        print(prefix)
+       
         suffix.append(0)
         suffix.reverse()
        
