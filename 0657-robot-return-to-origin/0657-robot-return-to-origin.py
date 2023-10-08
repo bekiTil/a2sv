@@ -12,7 +12,7 @@ class Solution:
                 x+=1
             else:
                 x-=1
-        print(x,y)
+      
         if x==0 and y==0:
             return True
         return False
