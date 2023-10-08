@@ -8,3 +8,4 @@ class Solution:
             se.append(int(x))
        
         return se
+        
